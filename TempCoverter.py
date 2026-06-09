@@ -55,6 +55,11 @@ class ConverterGUI:
         frame = self.frames[name]
         frame.tkraise()
 
-    # def create_main_frame():
+    def create_main_frame(self):
+        frame = Frame(self.container)
+        frame.grid(row=0, column=0, sticky="nsew")
 
-
+#main heading
+        Label(frame, font="FONT_MAIN_TITLE", text="Temperature Converter").grid(row=0, columnspan=2, padx=10, pady=10, sticky="nsew")
+#buttons
+        C_btn = Button(frame, text="to Centograde", bg="yellow", font="FONT_HEADING", command=lambda: self.show_frame("to_cFrame")).grid(row=1, column=0, padx=10, sticky="nsew")
