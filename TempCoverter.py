@@ -28,3 +28,33 @@ class TemperatureConverter:
         except ValueError:
             return "Enter a valid number"
         
+
+#================================================================#
+#                                GUI                             #
+#================================================================#
+
+class ConverterGUI:
+    def __init__(self, root):
+        #window 
+        self.root = root
+        self.root.title("Temperature Converter")
+        self.root.geometry("500x350")
+
+        self.container = Frame(self.root)
+        self.container.grid(row=0, column=0, sticky="nsew")
+
+        self.frames = {}
+
+        self.frames["MainFrame"] = self.create_main_frame()
+        self.frames["to_cFrame"] = self.create_to_c_frame()
+        self.frames["to_fFrame"] = self.create_to_f_frame()
+
+        self.show_frame("MainFrame")
+
+    def show_frame(self, name):
+        frame = self.frames[name]
+        frame.tkraise()
+
+    # def create_main_frame():
+
+
